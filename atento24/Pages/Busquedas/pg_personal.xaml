@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.Busquedas.pg_personal">
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem x:Name="btnsalir" Priority="0" Clicked="btnsalir_Clicked" Icon="fa-undo" IconColor="White"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="#E6E6E6">
+            <Label Margin="5,5,5,0" x:Name="lb_titulo" FontSize="16" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" Margin="4,4,4,0"  HorizontalOptions="Fill" BackgroundColor="White" >
+                <Editor x:Name="edFiltro" HeightRequest="25" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="btnFiltro" WidthRequest="60" Text="Bus" Clicked="btnFiltro_Clicked"/>
+            </StackLayout>
+            <ListView IsPullToRefreshEnabled="True" Refreshing="PersonalListView_Refreshing"
+                x:Name="PersonalListView" BackgroundColor="#E6E6E6" SeparatorVisibility="None" 
+                HasUnevenRows="true" ItemSelected="PersonalListView_ItemSelected" ItemsSource="{Binding lst_personal}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#E6E6E6" Spacing="0">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Margin="4,4,4,0" Padding="10" BackgroundColor="White">
+                                    <Label Text="{Binding nom_personal}" TextColor="#2E2E2E" HorizontalOptions="FillAndExpand" Margin="10,0,0,0" />
+                                    <iconize:IconImage Icon="fa-chevron-right" IconColor="#0199DC" IconSize="20"  />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

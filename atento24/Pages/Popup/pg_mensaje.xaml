@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="atento24.Pages.Popup.pg_mensaje">
+
+    <ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+        <AbsoluteLayout>
+            <Frame
+                x:Name="FrCont" 
+                CornerRadius="10"
+                HorizontalOptions="Center"
+                BackgroundColor="White">
+                <StackLayout>
+                    <StackLayout x:Name="sl_icon" BackgroundColor="#0199DC" Margin="-20">
+                        <iconize:IconLabel x:Name="ilb_icono" Text="fa-question-circle" TextColor="White" FontSize="60" Margin="0,20,0,0"
+                                            BackgroundColor="Transparent" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label x:Name="lb_titulo" Text="Titulo" TextColor="White" HorizontalOptions="Center" FontSize="18" Margin="0,5,0,10"/>
+                    </StackLayout>
+                    <Label x:Name="lb_mensaje" HorizontalOptions="CenterAndExpand" WidthRequest="200"
+                           Margin="0,25,0,10" FontSize="14" HorizontalTextAlignment="Center"/>
+                    <iconize:IconButton x:Name="icon_si" FontSize="16" Text="OK" Clicked="icon_si_Clicked" 
+                                        FontAttributes="Bold" HorizontalOptions="Center" WidthRequest="80" Margin="10,0,0,0"/>
+                </StackLayout>
+
+            </Frame>
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

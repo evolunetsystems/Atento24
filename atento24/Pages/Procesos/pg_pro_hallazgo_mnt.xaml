@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="atento24.Pages.Procesos.pg_pro_hallazgo_mnt">
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem x:Name="btn_grabar" Priority="0" Clicked="btn_grabar_Clicked" Icon="fa-floppy-o" IconColor="White"/>
+        <iconize:IconToolbarItem x:Name="btn_salir" Priority="1" Clicked="btn_salir_Clicked" Icon="fa-undo" IconColor="White"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="#E6E6E6">
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <DatePicker x:Name="dpFecha" IsVisible="False" DateSelected="dpFecha_DateSelected"/>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,10">
+                            <Label Text="Fecha" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                            <Label x:Name="dpFechaLabel" FontSize="Small" TextColor="Black">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="dpFechaLabel_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="50,0,0,0" Spacing="0">
+                        <Picker x:Name="pkHora" IsVisible="False" SelectedIndexChanged="pkHora_SelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>00</x:String>
+                                <x:String>01</x:String>
+                                <x:String>02</x:String>
+                                <x:String>03</x:String>
+                                <x:String>04</x:String>
+                                <x:String>05</x:String>
+                                <x:String>06</x:String>
+                                <x:String>07</x:String>
+                                <x:String>08</x:String>
+                                <x:String>09</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Picker x:Name="pkMinuto" IsVisible="False" SelectedIndexChanged="pkMinuto_SelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>00</x:String>
+                                <x:String>01</x:String>
+                                <x:String>02</x:String>
+                                <x:String>03</x:String>
+                                <x:String>04</x:String>
+                                <x:String>05</x:String>
+                                <x:String>06</x:String>
+                                <x:String>07</x:String>
+                                <x:String>08</x:String>
+                                <x:String>09</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                                <x:String>33</x:String>
+                                <x:String>34</x:String>
+                                <x:String>35</x:String>
+                                <x:String>36</x:String>
+                                <x:String>37</x:String>
+                                <x:String>38</x:String>
+                                <x:String>39</x:String>
+                                <x:String>40</x:String>
+                                <x:String>41</x:String>
+                                <x:String>42</x:String>
+                                <x:String>43</x:String>
+                                <x:String>44</x:String>
+                                <x:String>45</x:String>
+                                <x:String>46</x:String>
+                                <x:String>47</x:String>
+                                <x:String>48</x:String>
+                                <x:String>49</x:String>
+                                <x:String>50</x:String>
+                                <x:String>51</x:String>
+                                <x:String>52</x:String>
+                                <x:String>53</x:String>
+                                <x:String>54</x:String>
+                                <x:String>55</x:String>
+                                <x:String>56</x:String>
+                                <x:String>57</x:String>
+                                <x:String>58</x:String>
+                                <x:String>59</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,10">
+                            <Label Text="Hora" FontSize="Micro"  TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="pkHoraLabel" FontSize="Small" TextColor="Black" HorizontalOptions="CenterAndExpand">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="pkHoraLabel_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text=":" TextColor="Black" FontSize="Small" HorizontalOptions="CenterAndExpand"/>
+                                <Label x:Name="pkMinutoLabel" FontSize="Small" TextColor="Black" HorizontalOptions="CenterAndExpand">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="pkMinutoLabel_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="White" Margin="0,5,0,0" Padding="10,0,10,0">
+                    <Label Text="¿Que Ocurrio?" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Editor x:Name="edOcurrio" TextColor="Black" FontSize="Small" TextChanged="Editor_TextChanged"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                        <Label Text="Sistema" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="pkSistemaLabel" FontSize="Small" TextColor="Black">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="pkSistemaLabel_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkSistemaLabel_Tapped" />
+                </StackLayout>
+
+                <StackLayout x:Name="slHallazgo" Orientation="Horizontal" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                        <Label Text="Clase" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="pkHallazgoLabel" FontSize="Small" TextColor="Black">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="pkHallazgoLabel_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkHallazgoLabel_Tapped" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" Spacing="0">
+                        <Label Text="Nivel Riesgo" FontSize="Micro" TextColor="#5F6A6A"/>
+                        <Label x:Name="pkNivelRiesgoLabel" FontSize="Small" TextColor="Black"  >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="pkNivelRiesgoLabel_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" IsEnabled="True"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkNivelRiesgoLabel_Tapped" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" Spacing="0">
+                        <Label Text="Tipo" FontSize="Micro" TextColor="#5F6A6A"/>
+                        <Label x:Name="pkTipoLabel" FontSize="Small" TextColor="Black"  >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="pkTipoLabel_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" IsEnabled="True"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkTipoLabel_Tapped" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,5">
+                        <Label Text="Ocurrencia" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="lbl_ocurrencia" FontSize="Small" TextColor="Black" />
+                    </StackLayout>
+                    <iconize:IconButton x:Name="btn_ocurrencia" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="btn_ocurrencia_Clicked" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                        <Label Text="Reportado Por" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="lbl_reportado" FontSize="Small" TextColor="Black"/>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" CommandParameter="Rep" Clicked="btn_reportado_Clicked" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <!--<Picker x:Name="pkUbicacion" ItemsSource="{Binding lst_ubicacion}" ItemDisplayBinding="{Binding nom_tipoubicacion}" 
+                          SelectedIndexChanged="pkUbicacion_SelectedIndexChanged" IsVisible="False"/>-->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                            <Label Text="Ubicación" FontSize="Micro" TextColor="#5F6A6A"/>
+                            <Label x:Name="pkUbicacionLabel" FontSize="Small" TextColor="Black"  >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="pkUbicacionLabel_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" IsEnabled="True"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkUbicacionLabel_Tapped" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
+                        <Label x:Name="lbl_ubicacion" FontSize="Small" TextColor="Black" HorizontalOptions="FillAndExpand"
+                               Margin="0,10,0,0"/>
+                        <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" x:Name="btn_ubicacion"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="btn_ubicacion_Clicked" IsEnabled="True"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout x:Name="sl_responsable" Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                        <Label Text="Responsable" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="lbl_responsable" FontSize="Small" TextColor="Black"/>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" CommandParameter="Ejec" 
+                                        Clicked="btn_reportado_Clicked" />
+                </StackLayout>
+
+                <StackLayout x:Name="sl_Quehacer" Orientation="Vertical" Spacing="0" BackgroundColor="White" Margin="0,5,0,0" Padding="10,0,10,0">
+                    <Label Text="¿Que Hacer?" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Editor x:Name="edQheHacer" TextColor="Black" FontSize="Small" TextChanged="edQheHacer_TextChanged"/>
+                </StackLayout>
+
+                <Label x:Name="lbl_cod_personal" FontSize="Default" TextColor="Black" IsVisible="False"/>
+                <StackLayout x:Name="stPri" Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand">
+                    <Label x:Name="lbl_infract" Text="Infractores" FontSize="Micro" TextColor="#5F6A6A" 
+                           HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"/>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-plus" TextColor="Green" WidthRequest="40" CommandParameter="Inf" Clicked="btn_reportado_Clicked" />
+                </StackLayout>
+                <StackLayout x:Name="stInf" Margin="0,5,0,0" Orientation="Vertical" Spacing="0" 
+                             BackgroundColor="#E6E6E6">
+                </StackLayout>
+
+                <StackLayout x:Name="stEvi" Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" >
+                    <Label x:Name="lbl_evidencia" Text="Evidencias" FontSize="Micro" TextColor="#5F6A6A" 
+                           HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"/>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-plus" TextColor="Green" WidthRequest="40" Clicked="IconButton_Clicked" />
+                </StackLayout>
+                <StackLayout x:Name="stDet" Margin="0,5,0,0" Orientation="Vertical" Spacing="0" 
+                             BackgroundColor="#E6E6E6">
+                </StackLayout>
+
+                <StackLayout x:Name="stCoo" Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" >
+                    <Label x:Name="lbl_coordenada" Text="Coordenadas" FontSize="Micro" TextColor="#5F6A6A" 
+                           HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout x:Name="stMapa" Margin="0,10,0,0" Orientation="Vertical" Spacing="0" 
+                             BackgroundColor="White" HeightRequest="400" Padding="0,5,0,5">
+                    <maps:Map x:Name="Mapa" IsShowingUser="True"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

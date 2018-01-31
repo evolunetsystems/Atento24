@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.pg_sincronizar">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" BackgroundColor="#0199DC" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label x:Name="lb_numeric" FontSize="14" TextColor="White" Margin="15,10,0,15" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Label Text="Registros a sincronizar" FontSize="14" TextColor="White" Margin="15,10,0,15" VerticalOptions="Center" />
+                </StackLayout>                
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Margin="20,20,20,0">
+                    <Frame x:Name="fm_Subir" HorizontalOptions="Center" CornerRadius="10" BackgroundColor="#5F6A6A" WidthRequest="350" >
+                        <StackLayout Spacing="0">
+                            <iconize:IconLabel x:Name="btnSubir" VerticalOptions="Center" HorizontalOptions="Center" 
+                                BackgroundColor="Transparent" FontSize="25" Text="fa-cloud-upload" TextColor="White" />
+                            <Label x:Name="lbl_subir" Text="Subir" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="btnSubir_Clicked"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>            
+                <Label x:Name="lb_subir" Text="Opción para sincronizar datos del dispositivo móvil con la nube, replicando datos y generando las alertas según configuración."
+                       FontSize="Micro" TextColor="#5F6A6A" Margin="10,0,10,0" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" Margin="20,20,20,0" HorizontalOptions="Fill">
+                    <Frame x:Name="fm_Bajar" HorizontalOptions="Center" CornerRadius="10" BackgroundColor="#5F6A6A" WidthRequest="350" >
+                        <StackLayout Spacing="0">
+                            <iconize:IconLabel x:Name="btnBajar" VerticalOptions="Center" HorizontalOptions="Center" 
+                                BackgroundColor="Transparent" FontSize="25" Text="fa-cloud-download" TextColor="White" />
+                            <Label x:Name="lbl_bajar" Text="Bajar" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="btnSyn_Clicked"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>             
+                <Label x:Name="lb_bajar" Text="Opción para descargar datos de la nube al dispositivo móvil, permitiendo generar registros según el perfil asignado."
+                       FontSize="Micro" TextColor="#5F6A6A" Margin="10,0,10,0" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <!--<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                <iconize:IconButton x:Name="btnBajar" Clicked="btnSyn_Clicked" VerticalOptions="Center" HorizontalOptions="Center" 
+                                BackgroundColor="#5F6A6A" FontSize="20" Text="fa-cloud-download" TextColor="White" WidthRequest="100" />
+                <Label Text="Bajar" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#04B404"/>
+            </StackLayout>-->
+            
+            <StackLayout Orientation="Horizontal" Margin="20, 10, 20, 0">
+                <Label x:Name="lblPasos" Text="Pasos" />
+                <Label x:Name="lblNum" Text="0/20....." HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            
+            <Label x:Name="lblTabla" Text="Tablas a Sincronizar" Margin="20, 10, 20, 0" />
+            <ProgressBar x:Name="pgBarra" Progress="0.0" VerticalOptions="Center" HorizontalOptions="Center" 
+                         WidthRequest="300" HeightRequest="40" MinimumHeightRequest="40"/>
+            <ActivityIndicator x:Name="aiSync" IsRunning="{Binding IsBusy}" HorizontalOptions="Center"
+                               VerticalOptions="Center" HeightRequest="150" WidthRequest="150" Color="DarkBlue"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

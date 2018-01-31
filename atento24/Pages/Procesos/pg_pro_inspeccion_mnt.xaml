@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.Procesos.pg_pro_inspeccion_mnt">
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem x:Name="btn_grabar" Priority="0" Clicked="btn_grabar_Clicked" Icon="fa-floppy-o" IconColor="White"/>
+        <iconize:IconToolbarItem x:Name="btn_salir" Priority="1" Clicked="btn_salir_Clicked" Icon="fa-undo" IconColor="White"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="#E6E6E6">
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <DatePicker x:Name="dpFecha" IsVisible="False" DateSelected="dpFecha_DateSelected"/>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,10">
+                            <Label Text="Fecha" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                            <Label x:Name="dpFechaLabel" FontSize="Small" TextColor="Black">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="dpFechaLabel_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>                   
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="FillAndExpand" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" Spacing="0">
+                        <Label Text="Tipo" FontSize="Micro" TextColor="#5F6A6A"/>
+                        <Label x:Name="pkTipoLabel" FontSize="Small" TextColor="Black"  >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="pkTipoLabel_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" IsEnabled="True"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkTipoLabel_Tapped" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="White" Margin="0,5,0,0" Padding="10,0,10,0">
+                    <Label Text="Titulo" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Editor x:Name="edTitulo" TextColor="Black" FontSize="Small" TextChanged="edTitulo_TextChanged"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="White" Margin="0,5,0,0" Padding="10,0,10,0">
+                    <Label Text="Objetivo" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Editor x:Name="edObjetivo" TextColor="Black" FontSize="Small" TextChanged="edObjetivo_TextChanged"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                        <Label Text="Responsable" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="lbl_reportado" FontSize="Small" TextColor="Black"/>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" CommandParameter="Rep" 
+                            Clicked="btn_reportado_Clicked" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                        <Label Text="Sistema" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="pkSistemaLabel" FontSize="Small" TextColor="Black">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="pkSistemaLabel_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkSistemaLabel_Tapped" />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" Spacing="0">
+                        <Label Text="Ins. Predefinida" FontSize="Micro" TextColor="#5F6A6A"/>
+                        <Label x:Name="pkPreLabel" FontSize="Small" TextColor="Black">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="pkPreLabel_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" IsEnabled="True"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkPreLabel_Tapped" />
+                </StackLayout>
+                
+                <Label x:Name="lbl_cod_personal" FontSize="Default" TextColor="Black" IsVisible="False"/>
+                <StackLayout x:Name="stPri" Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand">
+                    <Label x:Name="lbl_infract" Text="Participantes" FontSize="Micro" TextColor="#5F6A6A" 
+                           HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"/>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-plus" TextColor="Green" WidthRequest="40" CommandParameter="Eva" 
+                                        Clicked="btn_reportado_Clicked" />
+                </StackLayout>
+                <StackLayout x:Name="stInf" Margin="0,5,0,0" Orientation="Vertical" Spacing="0" 
+                             BackgroundColor="#E6E6E6">
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

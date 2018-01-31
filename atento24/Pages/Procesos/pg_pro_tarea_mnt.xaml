@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.Procesos.pg_pro_tarea_mnt">
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem x:Name="btn_grabar" Priority="0" Clicked="btn_grabar_Clicked" Icon="fa-floppy-o" IconColor="White"/>
+        <iconize:IconToolbarItem x:Name="btn_salir" Priority="1" Clicked="btn_salir_Clicked" Icon="fa-undo" IconColor="White"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="#E6E6E6">
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Spacing="0" WidthRequest="150">
+                        <DatePicker x:Name="dpFechaIni" IsVisible="False" DateSelected="dpFechaIni_DateSelected"/>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,10">
+                            <Label Text="Desde" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                            <Label x:Name="dpFechaIniLabel" FontSize="Small" TextColor="Black">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="dpFechaIniLabel_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <DatePicker x:Name="dpFechaFin" IsVisible="False" DateSelected="dpFechaFin_DateSelected"/>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,10">
+                            <Label Text="Hasta" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                            <Label x:Name="dpFechaFinLabel" FontSize="Small" TextColor="Black">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="dpFechaFinLabel_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <Label Text="Solicitante" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Label x:Name="lbl_solicitante" FontSize="Small" TextColor="Gray" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                        <Label Text="Ejecutor" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="lbl_reportado" FontSize="Small" TextColor="Black"/>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" CommandParameter="Eje" Clicked="btn_reportado_Clicked" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="White" Margin="0,5,0,0" Padding="10,0,10,0">
+                    <Label Text="¿Que Hacer?" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Editor x:Name="edDescrip" TextColor="Black" FontSize="Small" TextChanged="edDescrip_TextChanged"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                            <Label Text="Ubicación" FontSize="Micro" TextColor="#5F6A6A"/>
+                            <Label x:Name="pkUbicacionLabel" FontSize="Small" TextColor="Black"  >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="pkUbicacionLabel_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" IsEnabled="True"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkUbicacionLabel_Tapped" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
+                        <Label x:Name="lbl_ubicacion" FontSize="Small" TextColor="Black" HorizontalOptions="FillAndExpand"
+                               Margin="0,10,0,0"/>
+                        <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" x:Name="btn_ubicacion"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="btn_ubicacion_Clicked" IsEnabled="True"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.MainPage" 
+             xmlns:local="clr-namespace:atento24"
+             BackgroundImage="fondo011.jpg">
+    
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">        
+        <StackLayout x:Name="slPrinc" Orientation="Vertical" BackgroundColor="Transparent" Spacing="0" 
+                    HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="30,90,30,0">
+            <Grid BackgroundColor="#5F6A6A" RowSpacing="0" Opacity="0.8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <iconize:IconImage Grid.Column="1" Grid.Row="1" Icon="fa-cloud" IconColor="White" IconSize="60"  />
+                <iconize:IconImage Grid.Column="1" Grid.Row="1" Icon="fa-clock-o" IconColor="#5F6A6A" IconSize="15" Margin="30,-11,0,0" />
+                <iconize:IconLabel Grid.Column="1" Grid.Row="1" Text="24" Margin="111,21,0,0" TextColor="#5F6A6A" FontSize="27" FontAttributes="Bold" />
+                    
+                <Label Grid.Column="1" Grid.Row="2" Text="Atento24" FontAttributes="Italic"
+                        TextColor="White" FontSize="24" HorizontalTextAlignment="Center" />
+                <Label Grid.Column="1" Grid.Row="3" Text="Sistema de Gestión ISO" FontAttributes="Italic"
+                        TextColor="White" FontSize="14" HorizontalTextAlignment="Center" />
+            </Grid>
+
+            <StackLayout Orientation="Vertical" Opacity="0.8" Padding="40" BackgroundColor="White" 
+                    HeightRequest="180" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >                    
+                <Entry Text="{Binding User.Email, Mode=TwoWay}" x:Name="EmailEntry" TextColor="Gray" Placeholder="Usuario" 
+                    PlaceholderColor="Gray" Keyboard="Email" FontSize="18" HorizontalTextAlignment="Start"/>
+                <Entry Text="{Binding User.Password, Mode=TwoWay}" x:Name="PasswordEntry" TextColor="Gray" Placeholder="*****" 
+                    PlaceholderColor="Gray" IsPassword="True" FontSize="18" HorizontalTextAlignment="Start"/>
+                <Button Margin="15,10" Text="Ingresar" BackgroundColor="#0199DC" TextColor="White" FontSize="18"  
+                            Clicked="Button_Login" x:Name="btn_login" />
+                <Label Text="Asegúrese de conectar sus Datos." HorizontalOptions="Center" VerticalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+
+        <Frame x:Name="frLogin" Padding="200" Margin="5,5,5,5" OutlineColor="Black" HasShadow="true" 
+                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
+                IsVisible="False" Opacity="0.4" BackgroundColor="Black" >
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ActivityIndicator  IsRunning="{Binding IsBusy}" Color="White"/>
+                <Label Text="Cargando..." TextColor="White"/>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+
+</ContentPage>

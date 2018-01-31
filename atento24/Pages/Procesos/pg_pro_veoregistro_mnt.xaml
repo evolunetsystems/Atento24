@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.Procesos.pg_pro_veoregistro_mnt">
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem x:Name="btn_grabar" Priority="0" Clicked="btn_grabar_Clicked" Icon="fa-floppy-o" IconColor="White"/>
+        <iconize:IconToolbarItem x:Name="btn_salir" Priority="0" Clicked="btn_salir_Clicked" Icon="fa-undo" IconColor="White"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="#E6E6E6" VerticalOptions="StartAndExpand">
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <DatePicker x:Name="dpFecha" IsVisible="False" DateSelected="dpFecha_DateSelected"/>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,10">
+                            <Label Text="Fecha" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                            <Label x:Name="dpFechaLabel" FontSize="Small" TextColor="Black">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="dpFechaLabel_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="50,0,0,0" Spacing="0">
+                        <Picker x:Name="pkHora" IsVisible="False" SelectedIndexChanged="pkHora_SelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>00</x:String>
+                                <x:String>01</x:String>
+                                <x:String>02</x:String>
+                                <x:String>03</x:String>
+                                <x:String>04</x:String>
+                                <x:String>05</x:String>
+                                <x:String>06</x:String>
+                                <x:String>07</x:String>
+                                <x:String>08</x:String>
+                                <x:String>09</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Picker x:Name="pkMinuto" IsVisible="False" SelectedIndexChanged="pkMinuto_SelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>00</x:String>
+                                <x:String>01</x:String>
+                                <x:String>02</x:String>
+                                <x:String>03</x:String>
+                                <x:String>04</x:String>
+                                <x:String>05</x:String>
+                                <x:String>06</x:String>
+                                <x:String>07</x:String>
+                                <x:String>08</x:String>
+                                <x:String>09</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                                <x:String>33</x:String>
+                                <x:String>34</x:String>
+                                <x:String>35</x:String>
+                                <x:String>36</x:String>
+                                <x:String>37</x:String>
+                                <x:String>38</x:String>
+                                <x:String>39</x:String>
+                                <x:String>40</x:String>
+                                <x:String>41</x:String>
+                                <x:String>42</x:String>
+                                <x:String>43</x:String>
+                                <x:String>44</x:String>
+                                <x:String>45</x:String>
+                                <x:String>46</x:String>
+                                <x:String>47</x:String>
+                                <x:String>48</x:String>
+                                <x:String>49</x:String>
+                                <x:String>50</x:String>
+                                <x:String>51</x:String>
+                                <x:String>52</x:String>
+                                <x:String>53</x:String>
+                                <x:String>54</x:String>
+                                <x:String>55</x:String>
+                                <x:String>56</x:String>
+                                <x:String>57</x:String>
+                                <x:String>58</x:String>
+                                <x:String>59</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,10">
+                            <Label Text="Hora" FontSize="Micro"  TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="pkHoraLabel" FontSize="Small" TextColor="Black" HorizontalOptions="CenterAndExpand">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="pkHoraLabel_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text=":" TextColor="Black" FontSize="Small" HorizontalOptions="CenterAndExpand"/>
+                                <Label x:Name="pkMinutoLabel" FontSize="Small" TextColor="Black" HorizontalOptions="CenterAndExpand">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="pkMinutoLabel_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="White" Margin="0,5,0,0" Padding="10,0,10,0">
+                    <Label Text="Plantilla" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Label x:Name="lbl_nomplantilla" TextColor="Black" FontSize="Small"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="0" Margin="0,5,0,0" Padding="10,0,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                            <Label x:Name="lbl_ubicacion" FontSize="Micro" TextColor="#5F6A6A"/>
+                            <Label x:Name="UbicacionLabel" FontSize="Small" TextColor="Black"  >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="UbicacionLabel_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" IsEnabled="True"
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="UbicacionLabel_Tapped" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Label x:Name="lbl_cod_personal" FontSize="Default" TextColor="Black" IsVisible="False"/>
+                <StackLayout x:Name="stPri" Orientation="Horizontal" Margin="0,5,0,0" Padding="10,0,10,0" Spacing="0" 
+                             HorizontalOptions="FillAndExpand">
+                    <Label Text="Evaluadores" FontSize="Small" TextColor="#5F6A6A" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"/>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-user-plus" TextColor="Green" WidthRequest="40" CommandParameter="Eva" 
+                                        Clicked="btnEvaluador_Clicked" BorderRadius="0"/>
+                </StackLayout>
+                <StackLayout x:Name="stInf" Margin="0,5,0,0" Orientation="Vertical" Spacing="0" 
+                             BackgroundColor="#E6E6E6">
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill"  Margin="10,5,10,5">
+                    <Label Text="Líneas de Control" FontSize="Small" TextColor="#5F6A6A" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"  />
+                    <iconize:IconButton Text="fa-chevron-right" VerticalOptions="Center" WidthRequest="40" HorizontalOptions="Center" 
+                                        FontSize="20" Clicked="lncontrol_Clicked" BackgroundColor="Transparent" TextColor="Green"/>
+                </StackLayout>
+
+                
+
+                <!--<StackLayout x:Name="stDet" Margin="0,5,0,0" Orientation="Vertical" Spacing="0" 
+                             BackgroundColor="#E6E6E6">
+                </StackLayout>
+                <ListView x:Name="lstCheck" CachingStrategy="RecycleElement" HasUnevenRows="True" BackgroundColor="#E6E6E6" 
+                                SeparatorVisibility="None" ItemTapped="lstCheck_ItemTapped" HeightRequest="1000" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout BackgroundColor="#E6E6E6" Spacing="0">
+                                        <StackLayout BackgroundColor="White" Spacing="0" Margin="0,5,0,0">
+                                            <Label Text="{Binding nom_lncontrol}" Margin="10,0,10,0" TextColor="Black" FontSize="Small"/>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Margin="10,0,10,0" Spacing="0">
+                                                <StackLayout Orientation="Horizontal" x:Name="slSimbolo" IsVisible="{Binding ena_simbolo}" HorizontalOptions="Start" >
+                                                    <Entry Text="{Binding val_lncontrol}" FontSize="Small" TextColor="Gray"  Completed="Entry_Completed" 
+                                                               Keyboard="Numeric" HorizontalTextAlignment="End" WidthRequest="60"/>
+                                                    <Label Text="{Binding nom_simbolo}" TextColor="Black" Margin="10,0,0,0" FontSize="Small" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" Margin="0,0,20,0" HorizontalOptions="EndAndExpand" WidthRequest="100" Spacing="0">
+                                                    <iconize:IconButton x:Name="btnCumple" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding ib_check}" TextColor="Black" 
+                                                                        WidthRequest="40" BackgroundColor="White" Clicked="chck_C_CheckedChanged" CommandParameter="{Binding .}" />
+                                                    <iconize:IconButton x:Name="btnNoCumple" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding ib_check_nc}" TextColor="Black" 
+                                                                        WidthRequest="40"  BackgroundColor="White" Clicked="chck_NC_CheckedChanged" CommandParameter="{Binding .}"/>
+                                                    <iconize:IconButton x:Name="btnNoAplica" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="{Binding ib_check_na}" TextColor="Black" 
+                                                                        WidthRequest="40" BackgroundColor="White" Clicked="chck_NA_CheckedChanged" CommandParameter="{Binding .}"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <Label x:Name="lblComentario" Text="Comentario" FontSize="Micro" TextColor="#5F6A6A" Margin="10,5,10,0" IsVisible="{Binding vis_lncontrol}"/>
+                                            <Editor x:Name="edComentario" Text="{Binding com_lncontrol}" TextColor="Black" FontSize="Small" Margin="10,0,10,0" IsVisible="{Binding vis_lncontrol}" 
+                                                    TextChanged="edComentario_TextChanged"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+
+</ContentPage>

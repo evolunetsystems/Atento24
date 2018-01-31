@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F7FB632-E029-458F-A24B-1DB4271CF7E0}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>atento24</RootNamespace>
+    <AssemblyName>atento24</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\pg_Loading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Popup\pg_mensaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Popup\pg_registro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\pg_sincronizar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Popup\pg_confirmacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MasterMenu\MasterDetailPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MasterMenu\MasterDetailPage1Detail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MasterMenu\MasterDetailPage1Master.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\pg_empresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_tarea_opc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_tarea_mnt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Popup\pg_lista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Busquedas\pg_equipo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Busquedas\pg_labor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Busquedas\pg_lugar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Busquedas\pg_personal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Busquedas\pg_evidencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Busquedas\pg_ocurrencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Busquedas\pg_lnControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Busquedas\pg_plantillaveo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_tarea_ate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_tarea_mas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_veoregistro_mnt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_veoregistro_qry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_hallazgo_det.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_hallazgo_mnt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_hallazgo_qry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_incidente_det.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_incidente_mnt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_incidente_qry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_inspeccion_det.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_inspeccion_mnt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_inspeccion_qry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_tarea_qry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Procesos\pg_pro_veoregistro_det.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\DataLite\lc_acc_empresa_Data.cs" />
+    <Compile Include="Data\DataLite\lc_acc_menu_Data.cs" />
+    <Compile Include="Data\DataLite\lc_acc_unidad_Data.cs" />
+    <Compile Include="Data\DataLite\lc_acc_unidad_severidadpot_Data.cs" />
+    <Compile Include="Data\DataLite\lc_acc_unidad_severidadreal_Data.cs" />
+    <Compile Include="Data\DataLite\lc_acc_unidad_sisgestion_Data.cs" />
+    <Compile Include="Data\DataLite\lc_acc_unidad_tipoubicacion_Data.cs" />
+    <Compile Include="Data\DataLite\lc_acc_usuario_Data.cs" />
+    <Compile Include="Data\DataLite\lc_aux_estado_Data.cs" />
+    <Compile Include="Data\DataLite\lc_aux_tbldetalle_Data.cs" />
+    <Compile Include="Data\DataLite\lc_cat_equipo_Data.cs" />
+    <Compile Include="Data\DataLite\lc_cat_inspeccionpre_Data.cs" />
+    <Compile Include="Data\DataLite\lc_cat_labor_Data.cs" />
+    <Compile Include="Data\DataLite\lc_cat_lugar_Data.cs" />
+    <Compile Include="Data\DataLite\lc_cat_ocurrencia_Data.cs" />
+    <Compile Include="Data\DataLite\lc_cat_personal_Data.cs" />
+    <Compile Include="Data\DataLite\lc_cat_veoplantilla_Data.cs" />
+    <Compile Include="Data\DataLite\lc_cat_veoplantilla_lncontrol_Data.cs" />
+    <Compile Include="Data\DataLite\lc_glb_hallazgoclase_Data.cs" />
+    <Compile Include="Data\DataLite\lc_glb_inspecciontipo_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_avance_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_coordenada_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_elimina_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_estado_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_evidencia_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_hallazgo_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_incidente_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_incidente_personal_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_inspeccion_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_participante_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_tarea_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_veoregistro_Data.cs" />
+    <Compile Include="Data\DataLite\lc_pro_veoregistro_lncontrol_Data.cs" />
+    <Compile Include="Data\LiteConnection\DataBase.cs" />
+    <Compile Include="Data\LiteConnection\IDataBase.cs" />
+    <Compile Include="Data\LiteConnection\Keys.cs" />
+    <Compile Include="Data\ORM\lc_acc_empresa.cs" />
+    <Compile Include="Data\ORM\lc_acc_menu.cs" />
+    <Compile Include="Data\ORM\lc_acc_unidad.cs" />
+    <Compile Include="Data\ORM\lc_acc_unidad_severidadpot.cs" />
+    <Compile Include="Data\ORM\lc_acc_unidad_severidadreal.cs" />
+    <Compile Include="Data\ORM\lc_acc_unidad_sisgestion.cs" />
+    <Compile Include="Data\ORM\lc_acc_unidad_tipoubicacion.cs" />
+    <Compile Include="Data\ORM\lc_acc_usuario.cs" />
+    <Compile Include="Data\ORM\lc_aux_estado.cs" />
+    <Compile Include="Data\ORM\lc_aux_tbldetalle.cs" />
+    <Compile Include="Data\ORM\lc_cat_equipo.cs" />
+    <Compile Include="Data\ORM\lc_cat_inspeccionpre.cs" />
+    <Compile Include="Data\ORM\lc_cat_labor.cs" />
+    <Compile Include="Data\ORM\lc_cat_lugar.cs" />
+    <Compile Include="Data\ORM\lc_cat_ocurrencia.cs" />
+    <Compile Include="Data\ORM\lc_cat_personal.cs" />
+    <Compile Include="Data\ORM\lc_cat_veoplantilla.cs" />
+    <Compile Include="Data\ORM\lc_cat_veoplantilla_lncontrol.cs" />
+    <Compile Include="Data\ORM\lc_glb_hallazgoclase.cs" />
+    <Compile Include="Data\ORM\lc_glb_inspecciontipo.cs" />
+    <Compile Include="Data\ORM\lc_pro_avance.cs" />
+    <Compile Include="Data\ORM\lc_pro_coordenada.cs" />
+    <Compile Include="Data\ORM\lc_pro_elimina.cs" />
+    <Compile Include="Data\ORM\lc_pro_estado.cs" />
+    <Compile Include="Data\ORM\lc_pro_evidencia.cs" />
+    <Compile Include="Data\ORM\lc_pro_hallazgo.cs" />
+    <Compile Include="Data\ORM\lc_pro_incidente.cs" />
+    <Compile Include="Data\ORM\lc_pro_incidente_personal.cs" />
+    <Compile Include="Data\ORM\lc_pro_inspeccion.cs" />
+    <Compile Include="Data\ORM\lc_pro_participante.cs" />
+    <Compile Include="Data\ORM\lc_pro_proyecto.cs" />
+    <Compile Include="Data\ORM\lc_pro_tarea.cs" />
+    <Compile Include="Data\ORM\lc_pro_veoregistro.cs" />
+    <Compile Include="Data\ORM\lc_pro_veoregistro_lncontrol.cs" />
+    <Compile Include="Data\ORM\lc_tabla_base.cs" />
+    <Compile Include="Data\StandarDB\LocalDB.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pg_Loading.xaml.cs">
+      <DependentUpon>pg_Loading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos\VarGlobal.cs" />
+    <Compile Include="Pages\Popup\pg_mensaje.xaml.cs">
+      <DependentUpon>pg_mensaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Popup\pg_registro.xaml.cs">
+      <DependentUpon>pg_registro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Popup\ent_mensaje.cs" />
+    <Compile Include="Pages\pg_sincronizar.xaml.cs">
+      <DependentUpon>pg_sincronizar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Popup\pg_confirmacion.xaml.cs">
+      <DependentUpon>pg_confirmacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterMenu\MasterDetailPage1.xaml.cs">
+      <DependentUpon>MasterDetailPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterMenu\MasterDetailPage1Detail.xaml.cs">
+      <DependentUpon>MasterDetailPage1Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterMenu\MasterDetailPage1Master.xaml.cs">
+      <DependentUpon>MasterDetailPage1Master.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterMenu\MasterDetailPage1MenuItem.cs" />
+    <Compile Include="Data\Entidades\acc_permiso.cs" />
+    <Compile Include="Pages\pg_empresa.xaml.cs">
+      <DependentUpon>pg_empresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_tarea_opc.xaml.cs">
+      <DependentUpon>pg_pro_tarea_opc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_tarea_mnt.xaml.cs">
+      <DependentUpon>pg_pro_tarea_mnt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Popup\pg_lista.xaml.cs">
+      <DependentUpon>pg_lista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busquedas\pg_equipo.xaml.cs">
+      <DependentUpon>pg_equipo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busquedas\pg_labor.xaml.cs">
+      <DependentUpon>pg_labor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busquedas\pg_lugar.xaml.cs">
+      <DependentUpon>pg_lugar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busquedas\pg_personal.xaml.cs">
+      <DependentUpon>pg_personal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busquedas\pg_evidencia.xaml.cs">
+      <DependentUpon>pg_evidencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busquedas\pg_ocurrencia.xaml.cs">
+      <DependentUpon>pg_ocurrencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busquedas\pg_lnControl.xaml.cs">
+      <DependentUpon>pg_lnControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busquedas\pg_plantillaveo.xaml.cs">
+      <DependentUpon>pg_plantillaveo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_tarea_ate.xaml.cs">
+      <DependentUpon>pg_pro_tarea_ate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_tarea_mas.xaml.cs">
+      <DependentUpon>pg_pro_tarea_mas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_veoregistro_mnt.xaml.cs">
+      <DependentUpon>pg_pro_veoregistro_mnt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_veoregistro_qry.xaml.cs">
+      <DependentUpon>pg_pro_veoregistro_qry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_hallazgo_det.xaml.cs">
+      <DependentUpon>pg_pro_hallazgo_det.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_hallazgo_mnt.xaml.cs">
+      <DependentUpon>pg_pro_hallazgo_mnt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_hallazgo_qry.xaml.cs">
+      <DependentUpon>pg_pro_hallazgo_qry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_incidente_det.xaml.cs">
+      <DependentUpon>pg_pro_incidente_det.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_incidente_mnt.xaml.cs">
+      <DependentUpon>pg_pro_incidente_mnt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_incidente_qry.xaml.cs">
+      <DependentUpon>pg_pro_incidente_qry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_inspeccion_det.xaml.cs">
+      <DependentUpon>pg_pro_inspeccion_det.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_inspeccion_mnt.xaml.cs">
+      <DependentUpon>pg_pro_inspeccion_mnt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_inspeccion_qry.xaml.cs">
+      <DependentUpon>pg_pro_inspeccion_qry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_tarea_qry.xaml.cs">
+      <DependentUpon>pg_pro_tarea_qry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Procesos\pg_pro_veoregistro_det.xaml.cs">
+      <DependentUpon>pg_pro_veoregistro_det.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SplashPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Iconize">
+      <HintPath>..\packages\Xam.Plugin.Iconize.2.0.0.37-beta\lib\netstandard1.0\Plugin.Iconize.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.122203\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.122203\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.122203\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Iconize.FontAwesome">
+      <HintPath>..\packages\Xam.Plugin.Iconize.FontAwesome.2.0.0.37-beta\lib\netstandard1.0\Plugin.Iconize.FontAwesome.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup">
+      <HintPath>..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.Platform">
+      <HintPath>..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\netstandard1.0\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\netstandard1.0\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Media.3.1.3\lib\netstandard1.0\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.3.1.3\lib\netstandard1.0\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.5.0.122203\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.2.0\lib\netstandard1.0\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.2.0\lib\netstandard1.0\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.5\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.5\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.5\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.4.118\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.raw">
+      <HintPath>..\packages\SQLitePCL.raw.0.9.3\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCL.raw.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\8.1.5-0\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v7.1\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\11.6.1.4\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Popup\" />
+    <Folder Include="Recursos\" />
+    <Folder Include="Pages\MasterMenu\" />
+    <Folder Include="Data\Entidades\" />
+    <Folder Include="Pages\Procesos\" />
+    <Folder Include="Pages\Busquedas\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+</Project>

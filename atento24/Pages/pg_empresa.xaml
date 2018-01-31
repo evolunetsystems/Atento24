@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Atento24"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.pg_empresa" BackgroundColor="#E6E6E6"  >
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ListView  x:Name="lstEmpresa" HorizontalOptions="FillAndExpand"  SeparatorVisibility="None" 
+                       VerticalOptions="FillAndExpand" ItemSelected="SeleccionarEmpresa" HeightRequest="1000" 
+                       IsPullToRefreshEnabled="True" Refreshing="lstEmpresa_Refreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#E6E6E6" Spacing="0">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Margin="4,4,4,0" Padding="10" BackgroundColor="{Binding s_color_00}">
+                                    <iconize:IconImage Icon="fa-industry" IconColor="#0199DC" IconSize="20" IsVisible="{Binding b_visible}" />
+                                    <Label Text="{Binding nom_unidad}" TextColor="#2E2E2E" HorizontalOptions="FillAndExpand" 
+                                           Margin="10,0,0,0" FontAttributes="{Binding fontAttribute}"/>
+                                    <iconize:IconImage Icon="fa-chevron-right" IconColor="#0199DC" IconSize="20" IsVisible="{Binding b_visible}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+            
+    </ContentPage.Content>
+</ContentPage>

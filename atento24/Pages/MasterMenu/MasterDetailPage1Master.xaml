@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.MasterDetailPage1Master"
+             Title="Master" >
+  <StackLayout>
+        <ListView x:Name="PermisoListView"
+              BackgroundColor="#E6E6E6" SeparatorVisibility="None"  
+              HasUnevenRows="true" 
+              ItemsSource="{Binding MenuItems}" >
+            <ListView.Header>
+                <Grid BackgroundColor="#5F6A6A" RowSpacing="0" Opacity="0.8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <iconize:IconImage Grid.Column="1" Grid.Row="1" Icon="fa-cloud" IconColor="#0199DC" IconSize="40" HorizontalOptions="Start" WidthRequest="45"   />
+                    <iconize:IconImage Grid.Column="1" Grid.Row="1" Icon="fa-clock-o" IconColor="White" IconSize="10" Margin="27,-7,0,0" HorizontalOptions="Start" />
+                    <Label Grid.Column="1" Grid.Row="1" Text="24" Margin="12,12,0,0" TextColor="White" FontSize="16" />
+                    
+                    <Label Grid.Column="1" Grid.Row="1" Text="Atento24" Margin="50,5,0,0" FontAttributes="Italic"
+                           TextColor="White" FontSize="Large"
+                           Style="{DynamicResource SubtitleStyle}"/>
+                    <Label Grid.Column="1" Grid.Row="2" Text="Sistema de Gestión ISO" FontAttributes="Italic"
+                           TextColor="White" FontSize="Micro"
+                           Style="{DynamicResource SubtitleStyle}"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#E6E6E6" Spacing="0">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Margin="5,5,5,0" Padding="10" BackgroundColor="White">
+                                <iconize:IconImage Icon="{Binding ico_menu}" IconColor="#0199DC" IconSize="21" WidthRequest="30"  />
+                                <Label TextColor="#2E2E2E" Text="{Binding nom_menu}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

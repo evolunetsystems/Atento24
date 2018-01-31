@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="atento24.Pages.Popup.pg_lista">
+
+    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <AbsoluteLayout>
+            <Frame
+                x:Name="FrameContainer" 
+                CornerRadius="10"
+                HorizontalOptions="Center"
+                BackgroundColor="#E6E6E6" WidthRequest="250" >
+                <StackLayout>
+                    <StackLayout x:Name="sl_confirmacion" BackgroundColor="#0199DC" Margin="-20" Padding="20">
+                        <Label x:Name="lbl_titulo" Text="Seleccionar Opción" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" 
+                           BackgroundColor="Transparent" FontSize="18" TextColor="White"/>
+                    </StackLayout>                    
+
+                    <ListView x:Name="lv_opcion" ItemSelected="lv_opcion_ItemSelected"  Margin="-20,10,-20,-20" HeightRequest="110">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <StackLayout BackgroundColor="#E6E6E6" Spacing="0">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Margin="4,4,4,0" Padding="10" BackgroundColor="White">
+                                            <iconize:IconImage Icon="{Binding ico_mensaje}" IconColor="Gray" IconSize="20" VerticalOptions="Center" />
+                                            <Label Text="{Binding tex_mensaje}" TextColor="#2E2E2E" HorizontalOptions="FillAndExpand" Margin="10,0,0,0"/>
+                                            <iconize:IconImage Icon="fa-chevron-right" IconColor="#0199DC" IconSize="20" VerticalOptions="Center" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <iconize:IconButton x:Name="icon_si" FontSize="14" Text="SALIR" Clicked="Close_List" TextColor="White"
+                        HorizontalOptions="Center" WidthRequest="100" BackgroundColor="#FF0000" Margin="0,20,0,-10"/>
+                </StackLayout>
+
+            </Frame>
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

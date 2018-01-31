@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.Procesos.pg_pro_hallazgo_qry" BackgroundColor="#0199DC" >
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem Clicked="Nuevo_Clicked" Icon="fa-file-o" IconColor="White"  />
+        <iconize:IconToolbarItem x:Name="btnSalir" Priority="1" Clicked="btnSalir_Clicked" Icon="fa-undo" IconColor="White"  />
+    </ContentPage.ToolbarItems>    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="slCabecera" BackgroundColor="#0199DC" Spacing="0">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Label Text="Código" WidthRequest="100" FontSize="Micro" TextColor="White" Margin="10,10,10,0"/>
+                        <Label x:Name="lbl_cod" Text="{Binding cod_inspeccion}" TextColor="White" HorizontalOptions="StartAndExpand" 
+                                FontSize="Small" Margin="10,0,10,0"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Label Text="Tipo" FontSize="Micro" Margin="10,10,10,0" TextColor="White"/>
+                        <Label x:Name="lbl_tip" Text="{Binding nom_inspecciontipo}" TextColor="White" Margin="10,0,10,0" FontSize="Small"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="Titulo" FontSize="Micro" TextColor="White" Margin="10,5,10,0"/>
+                <Label x:Name="lbl_tit" Text="{Binding tit_inspeccion}" TextColor="White" Margin="10,0,10,0" FontSize="Small"/>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="ObservacionlistView" CachingStrategy="RecycleElement" HasUnevenRows="True" BackgroundColor="#E6E6E6" 
+                            SeparatorVisibility="None" HeightRequest="1000" IsPullToRefreshEnabled="True" Refreshing="ObservacionlistView_Refreshing">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout BackgroundColor="#E6E6E6" Spacing="0">
+                                    <StackLayout Orientation="Vertical" Margin="8,8,8,0" BackgroundColor="White" Spacing="0">
+                                        <StackLayout Orientation="Horizontal" Spacing="0">
+                                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,10,10,0">
+                                                <Label Text="¿Cuando Ocurrió?" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" Margin="10,0,10,0"/>
+                                                <Label Text="{Binding fec_hallazgo}" TextColor="#2E2E2E" HorizontalOptions="StartAndExpand" 
+                                                    FontSize="14" Margin="10,0,10,0"/>
+                                            </StackLayout>
+                                            <iconize:IconLabel x:Name="iconNivel" Text="fa-exclamation-circle" TextColor="{Binding niv_color}" FontSize="25" 
+                                                                BackgroundColor="White" Margin="0,10,10,0" FontAttributes="Bold" >
+                                                <iconize:IconLabel.GestureRecognizers>
+                                                    <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TapGestureRecognizer_Tapped_nivel"/>
+                                                </iconize:IconLabel.GestureRecognizers>
+                                            </iconize:IconLabel>
+                                            <iconize:IconLabel x:Name="iconSincro" Text="fa-cloud-upload" TextColor="{Binding sincr_color}" FontSize="25" 
+                                                                BackgroundColor="White" Margin="0,10,10,0" FontAttributes="Bold" >
+                                                <iconize:IconLabel.GestureRecognizers>
+                                                    <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TapGestureRecognizer_Tapped_sincro"/>
+                                                </iconize:IconLabel.GestureRecognizers>
+                                            </iconize:IconLabel>
+                                        </StackLayout>
+                                        <StackLayout IsVisible="{Binding ver_clase}" Orientation="Vertical" BackgroundColor="Transparent" Spacing="0" >
+                                            <Label Text="Clase" FontSize="Micro" TextColor="#5F6A6A" Margin="10,10,10,0"/>
+                                            <Label Text="{Binding nom_hallazgoclase}" TextColor="#2E2E2E" HorizontalOptions="StartAndExpand" 
+                                                       FontSize="14" Margin="10,0,10,0" />
+                                        </StackLayout>
+
+                                        <Label Text="¿Qué Ocurrió?" FontSize="Micro" Margin="10,5,10,0" TextColor="#5F6A6A"/>
+                                        <Label Text="{Binding des_hallazgo}" TextColor="#2E2E2E" Margin="10,0,10,0" FontSize="14"/>
+                                        
+                                        <Label Text="{Binding nom_tipoubicacion}" FontSize="Micro" TextColor="#5F6A6A" Margin="10,5,10,0"/>
+                                        <Label Text="{Binding nom_ubicacion}" TextColor="#2E2E2E" Margin="10,0,10,0" FontSize="14"/>
+
+                                        <Label Text="Tipo" FontSize="Micro" TextColor="#5F6A6A" Margin="10,5,10,0"/>
+                                        <Label Text="{Binding nom_tblocurrenciatipo}" TextColor="#2E2E2E" Margin="10,0,10,0" FontSize="14"/>
+
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" Spacing="0" Margin="10,5,0,0">
+                                            <StackLayout Orientation="Vertical" BackgroundColor="Transparent" Spacing="0" >
+                                                <Label Text="% Avance" FontSize="Micro"  TextColor="#5F6A6A"/>
+                                                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" Spacing="0" Margin="0,0,0,5">
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_01}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_02}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_03}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_04}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_05}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_06}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_07}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_08}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_09}" IconSize="20" WidthRequest="16" />
+                                                    <iconize:IconImage Icon="fa-stop" IconColor="{Binding s_color_10}" IconSize="20" WidthRequest="16" />
+                                                    <Label Text="{Binding i_avance}" BackgroundColor="Transparent" TextColor="White" Margin="-90,0,0,0" FontSize="Small" WidthRequest="155" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>                                     
+
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="#F2F2F2" Padding="5">
+                                            <Button x:Name="btnCrear" Text="Tareas" BackgroundColor="#5F6A6A" TextColor="White" FontSize="Small" 
+                                                FontAttributes="Bold" Clicked="btnCrear_Clicked" CommandParameter="{Binding .}"/>
+
+                                            <iconize:IconLabel Text="fa-circle" TextColor="#DF0101" FontSize="20" Margin="-25,0,0,8" IsVisible="{Binding ver_tarea}"/>
+                                            <iconize:IconLabel Text="{Binding num_tarea}" TextColor="White" HorizontalTextAlignment="Center" FontSize="Micro" 
+                                                        Margin="-25,3,0,0" WidthRequest="20" IsVisible="{Binding ver_tarea}" />
+
+                                            <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#5F6A6A" 
+                                                    FontSize="20" Text="fa-pencil-square-o" TextColor="White" WidthRequest="50" 
+                                                    Clicked="btnModi_Clicked" IsEnabled="{Binding isEnalbe}" CommandParameter="{Binding .}"/>
+                                            <iconize:IconButton x:Name="btnEli" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#5F6A6A" 
+                                                    FontSize="20" Text="fa-trash-o" TextColor="White" WidthRequest="50" 
+                                                    Clicked="btnEli_Clicked" CommandParameter="{Binding .}"/>
+                                            <iconize:IconButton x:Name="btnMas" Text="..." BackgroundColor="#5F6A6A" TextColor="White" FontSize="Small" 
+                                                    FontAttributes="Bold" Clicked="btnMas_Clicked" WidthRequest="50" CommandParameter="{Binding .}" />
+                                        </StackLayout>
+                                        
+                                    </StackLayout>
+                                </StackLayout>                                
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>      
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

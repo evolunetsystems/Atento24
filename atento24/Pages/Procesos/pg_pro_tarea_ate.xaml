@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.Procesos.pg_pro_tarea_ate">
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem x:Name="btn_grabar" Priority="0" Clicked="btnGrabar_Clicked" Icon="fa-floppy-o" IconColor="White"/>
+        <iconize:IconToolbarItem x:Name="btn_salir" Priority="1" Clicked="btn_salir_Clicked" Icon="fa-undo" IconColor="White"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="stPri" Orientation="Vertical" Margin="0,5,0,0" BackgroundColor="White" Spacing="0" Padding="10">
+                <Label Text="¿Que Hacer?" FontSize="Micro" TextColor="#5F6A6A" />
+                <Label x:Name="edDescripcion" TextColor="#2E2E2E"/>
+                <Label Text="Ingresar Comentario" FontSize="Micro" TextColor="#5F6A6A" Margin="0,10,10,0"/>
+                <Editor x:Name="edComentario" HeightRequest="80" TextColor="Black" FontSize="Default"></Editor>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="10,0,10,10" x:Name="slAvance">
+                    <Label Text="% Avance" FontSize="Default" TextColor="#5F6A6A" WidthRequest="100" 
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                        <iconize:IconButton x:Name="btnRestar" Text="fa-minus" TextColor="White" FontSize="20" BackgroundColor="#5F6A6A"
+                                            HorizontalOptions="Center" VerticalOptions="Center" Clicked="btnRestar_Clicked" WidthRequest="50"/>
+                        <Label x:Name="lblAvance" FontSize="Medium" TextColor="#2E2E2E" HeightRequest="40" WidthRequest="50"
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <iconize:IconButton x:Name="btnSumar" Text="fa-plus" TextColor="White" FontSize="20" BackgroundColor="#5F6A6A"
+                                            HorizontalOptions="Center" VerticalOptions="Center" Clicked="btnSumar_Clicked" WidthRequest="50"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout x:Name="slEstado" Orientation="Horizontal" Spacing="0" Margin="0,5,0,0" Padding="0,10,10,0" HorizontalOptions="Fill" 
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,5,0,0">
+                        <Label Text="Estado" FontSize="Micro" TextColor="#5F6A6A" />
+                        <Label x:Name="pkEstadoLabel" FontSize="Small" TextColor="Black">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="pkEstadoLabel_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <iconize:IconButton VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" 
+                            FontSize="20" Text="fa-chevron-down" TextColor="Black" WidthRequest="40" Clicked="pkEstadoLabel_Tapped" />
+                </StackLayout>
+                
+                <Image x:Name="img_foto"/>
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,20,0,20">
+                    <iconize:IconButton x:Name="btnGal" Text="fa-picture-o" TextColor="White" FontSize="20" Clicked="btnGal_Clicked" BackgroundColor="#5F6A6A" HeightRequest="50"/>
+                    <iconize:IconButton x:Name="btnCam" Text="fa-camera" TextColor="White" FontSize="20" Clicked="btnCam_Clicked" BackgroundColor="#5F6A6A" HeightRequest="50"/>
+                    <iconize:IconButton x:Name="btnBorrar" Text="fa-trash" TextColor="White" FontSize="20" Clicked="btnBorrar_Clicked" IsVisible="False" BackgroundColor="#FF0000" HeightRequest="50"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#BFD6EC" Padding="10" Margin="0,0,0,0">
+                    <Label Text="Avances y Comentarios" TextColor="#0199DC" HorizontalOptions="FillAndExpand"/>
+                    <ActivityIndicator x:Name="aiAva" IsRunning="True" HorizontalOptions="End" HeightRequest="20" 
+                                       Color="#0199DC" WidthRequest="20"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

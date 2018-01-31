@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="atento24.Pages.Busquedas.pg_lnControl">
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem x:Name="btnGrabar" Priority="0" Clicked="btn_grabar_Clicked" Icon="fa-floppy-o" IconColor="White" IsVisible="False" />
+        <iconize:IconToolbarItem x:Name="btnSalir" Priority="1" Clicked="btnSalir_Clicked" Icon="fa-chevron-left" IconColor="White"  />
+        <iconize:IconToolbarItem x:Name="btnNext" Priority="2" Clicked="btnNext_Clicked" Icon="fa-chevron-right" IconColor="White" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>    
+            <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="#E6E6E6" VerticalOptions="StartAndExpand">
+                <StackLayout x:Name="slCabecera" BackgroundColor="#0199DC" Spacing="0">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical" Spacing="0">
+                            <Label Text="Fecha" WidthRequest="100" FontSize="Micro" TextColor="White" Margin="10,10,10,0"/>
+                            <Label x:Name="lbl_fecha" TextColor="White" FontSize="Small" Margin="10,0,10,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" Spacing="0">
+                            <Label Text="N° LC" FontSize="Micro" Margin="10,10,10,0" TextColor="White"/>
+                            <Label x:Name="lbl_lncontrol" TextColor="White" Margin="10,0,10,0" FontSize="Small"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Label Text="Plantilla VEO" FontSize="Micro" Margin="10,5,10,0" TextColor="White"/>
+                    <Label x:Name="lbl_nompla"  TextColor="White" Margin="10,0,10,0" FontSize="Small"/>
+
+                    <Label x:Name="lbl_Lugar" FontSize="Micro" TextColor="White" Margin="10,5,10,0"/>
+                    <Label x:Name="lbl_Ubicacion" TextColor="White" Margin="10,0,10,5" FontSize="Small"/>
+                </StackLayout>
+
+                <StackLayout x:Name="slCumplimiento" Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="#E6E6E6" Margin="10,10,10,10">
+                    <Label Text="" FontSize="Small" TextColor="#5F6A6A" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"  />
+                    <Label Text="C" TextColor="#5F6A6A" FontSize="Small" WidthRequest="30" FontAttributes="Bold"/>
+                    <Label Text="NC" TextColor="#5F6A6A" FontSize="Small" WidthRequest="30" FontAttributes="Bold"/>
+                    <Label Text="NA" TextColor="#5F6A6A" FontSize="Small" WidthRequest="30" FontAttributes="Bold"/>
+                </StackLayout>
+            
+                <StackLayout x:Name="slLnControl" BackgroundColor="#E6E6E6" Spacing="0">
+                    <StackLayout BackgroundColor="White" Spacing="0" Margin="0,5,0,0">
+                        <Label x:Name="lbl_nom_lncontrol" Margin="10,5,10,0" TextColor="Black" FontSize="Small"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Margin="10,0,10,0" Spacing="0">
+                            <StackLayout Orientation="Horizontal" x:Name="slSimbolo"  HorizontalOptions="Start" >
+                                <Entry x:Name="lbl_val_lncontrol" FontSize="Small" TextColor="Gray"  Completed="Entry_Completed" 
+                                       Keyboard="Numeric" HorizontalTextAlignment="End" WidthRequest="60"/>
+                                <Label x:Name="lbl_nom_simbolo" TextColor="Black" Margin="10,0,0,0" FontSize="Small" VerticalOptions="Center" 
+                                       HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,20,0" HorizontalOptions="EndAndExpand" WidthRequest="100" Spacing="0">
+                                <iconize:IconButton x:Name="btnCumple" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" TextColor="White" 
+                                                WidthRequest="40" BackgroundColor="#5F6A6A" Clicked="btnCumple_Clicked" CommandParameter="{Binding .}" />
+                                <iconize:IconButton x:Name="btnNoCumple" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20"  TextColor="White" 
+                                                WidthRequest="40"  BackgroundColor="#5F6A6A" Clicked="btnNoCumple_Clicked" CommandParameter="{Binding .}"/>
+                                <iconize:IconButton x:Name="btnNoAplica" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" TextColor="White" 
+                                                WidthRequest="40" BackgroundColor="#5F6A6A" Clicked="btnNoAplica_Clicked" CommandParameter="{Binding .}"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Label x:Name="lblComentario" Text="Comentario" FontSize="Micro" TextColor="#5F6A6A" Margin="10,5,10,0"/>
+                        <Editor x:Name="edComentario" Text="{Binding com_lncontrol}" TextColor="Black" FontSize="Small" Margin="10,0,10,0" 
+                                                        TextChanged="edComentario_TextChanged"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout x:Name="slGrabar" BackgroundColor="#E6E6E6" Spacing="0" Margin="10,10,10,10" IsVisible="False">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="CUMPLE" Margin="0,5,0,0" WidthRequest="140" TextColor="Black"/>
+                        <Label Text="=" TextColor="Black" FontAttributes="Bold" FontSize="Small" Margin="0,5,0,0"/>
+                        <Label x:Name="lbl_cum_lncontrol" TextColor="Black" Margin="10,5,0,0" FontSize="15" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="NO CUMPLE" Margin="0,5,0,0" WidthRequest="140" TextColor="Black"/>
+                        <Label Text="=" TextColor="Black" FontAttributes="Bold" FontSize="Small" Margin="0,5,0,0"/>
+                        <Label x:Name="lbl_noc_lncontrol" TextColor="Black" Margin="10,3,0,0" FontSize="15" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="NO APLICA" Margin="0,5,0,0" WidthRequest="140" TextColor="Black"/>
+                        <Label Text="=" TextColor="Black" FontAttributes="Bold" FontSize="Small" Margin="0,5,0,0"/>
+                        <Label x:Name="lbl_noa_lncontrol" TextColor="Black" Margin="10,3,0,0" FontSize="15" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="CUMPLIMIENTO" Margin="0,20,0,0" WidthRequest="140" TextColor="Black"/>
+                        <Label Text="=" TextColor="Black" FontAttributes="Bold" FontSize="Small" Margin="0,20,0,0"/>
+                        <Label x:Name="lbl_por_lncontrol" TextColor="Black" Margin="10,20,0,0" FontSize="15" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout  BackgroundColor="White" Margin="0,5,0,0" IsVisible="False" x:Name="slCoor" Spacing="0">
+                    <StackLayout x:Name="stCoo" Orientation="Horizontal" Margin="0,5,0,5" Padding="10,10,10,10" Spacing="0" 
+                                 HorizontalOptions="FillAndExpand" BackgroundColor="#E6E6E6">
+                        <Label x:Name="lbl_coordenada" Text="Coordenadas" FontSize="Micro" TextColor="#5F6A6A" 
+                               HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout x:Name="stMapa" Margin="0,5,0,0" Orientation="Vertical" Spacing="0" 
+                                 BackgroundColor="White" HeightRequest="400" Padding="5,0,5,5">
+                        <maps:Map x:Name="Mapa" IsShowingUser="True"/>
+                    </StackLayout>
+                </StackLayout>
+            
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

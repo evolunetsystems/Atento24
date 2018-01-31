@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="atento24.Pages.Procesos.pg_pro_tarea_mas"
+             Title="pg_pro_tarea_mas">
+    <ContentPage.ToolbarItems>
+        <iconize:IconToolbarItem x:Name="btnsalir" Priority="0" Clicked="btnsalir_Clicked" Icon="fa-undo" IconColor="White"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView >
+            <StackLayout x:Name="stPri" Orientation="Vertical" BackgroundColor="#E6E6E6" Spacing="0" >
+                <StackLayout Orientation="Vertical" Margin="0,0,0,10" Padding="10" BackgroundColor="White" Spacing="0">
+                    <StackLayout Orientation="Horizontal" >
+                        <StackLayout Orientation="Vertical" Spacing="0">
+                            <Label Text="Código" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A"/>
+                            <Label x:Name="lbl_cod_tarea" TextColor="#2E2E2E" />
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" Spacing="0">
+                            <Label Text="Estado" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" Margin="50,0,0,0"/>
+                            <Label x:Name="lbl_nom_estado" TextColor="#2E2E2E" Margin="50,0,0,0" />
+                        </StackLayout>
+                    </StackLayout>
+                    <Label Text="Origen" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Label x:Name="lbl_nom_origen" TextColor="#2E2E2E" 
+                           HorizontalOptions="StartAndExpand" FontSize="Small" />
+                    <Label Text="¿Que Hacer?" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Label x:Name="lbl_des_tarea" TextColor="#2E2E2E" 
+                           HorizontalOptions="StartAndExpand" FontSize="Small" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,5,0,0">
+                        <StackLayout Orientation="Vertical" Spacing="0">
+                            <Label Text="Desde" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" />
+                            <Label x:Name="dpDesde" TextColor="#2E2E2E"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" Spacing="0">
+                            <Label Text="Hasta" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" Margin="50,0,0,0"/>
+                            <Label x:Name="dpHasta" TextColor="#2E2E2E" Margin="50,0,0,0"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <Label Text="Solicitado Por" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Label x:Name="lbl_nom_sol_personal" TextColor="#2E2E2E" />
+                    <Label Text="Ejecutado Por" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Label x:Name="lbl_nom_eje_personal" TextColor="#2E2E2E" />
+                    <Label Text="Ubicación" WidthRequest="100" FontSize="Micro" TextColor="#5F6A6A" Margin="0,5,0,0"/>
+                    <Label x:Name="lbl_nom_ubicacion" TextColor="#2E2E2E" />
+                    
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" BackgroundColor="#BFD6EC" Padding="10" Margin="0,0,0,0">
+                    <Label Text="Avances y Comentarios" TextColor="#0199DC" HorizontalOptions="FillAndExpand"/>
+                    <ActivityIndicator x:Name="aiAva" IsRunning="True" HorizontalOptions="End" HeightRequest="20" 
+                                       Color="#0199DC" WidthRequest="20"/>
+                </StackLayout>                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
